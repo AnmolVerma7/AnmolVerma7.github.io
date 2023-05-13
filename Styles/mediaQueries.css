@@ -1,0 +1,121 @@
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+@media(min-width: 320px) {
+
+    img {
+        display: none;
+    }
+    .container {
+        max-width: 320px;
+    }
+
+    .wrapper {
+        gap: 0;
+    }
+
+    .homeBox h1 {
+        text-align: left;
+        font-size: 2.5em;
+        margin: 15px 15px;
+    }
+
+    .projectBoxStack {
+        width: 100%;
+    }
+
+    .projectBox {
+        width: 90%;
+    }
+
+    .projectBox h1 {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 425px) {
+
+    img {
+        display: block;
+    }
+    .container {
+        max-width:425px;
+    }
+    .homeBox h1 {
+        font-size: 3em;
+        margin: 15px 15px;
+    }
+
+    .projectBoxStack {
+        width: 100%;
+    }
+
+    .projectBox {
+        width: 90%;
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width:640px;
+    }
+    .homeBox h1 {
+        font-size: 3em;
+        margin: 15px 15px;
+    }
+
+    .projectBoxStack {
+        width: 90%;
+    }
+
+    .projectBox {
+        width: 70%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width:768px;
+    }
+
+    .projectBoxStack {
+        width: 90%;
+    }
+
+    .homeBox h1 {
+        font-size: 5em;
+        margin: 15px 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width:1024px;
+    }
+
+    .projectBox {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width:1280px;
+    }
+    .projectBox {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width:1536px;
+    }
+
+    .projectBox {
+        width: 80%;
+    }
+}

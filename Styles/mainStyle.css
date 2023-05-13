@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+/* Variables */
+:root {
+    /* Primary Secondary */
+    --primary: rgb(19, 19, 19);
+    --secondary:rgb(26, 26, 26);
+
+    /*B/W*/
+    --black: #000000;
+    --white: #ffffff;
+
+    /* Gradient Color */
+    --gradientColor: #a400ea;
+    
+    /* Text Color */
+    --textColor1: #b10ef7;
+    --textColor2: #ad37e0;
+
+    /* Button Color */
+    --buttonColor: #691f89;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.372), rgba(144, 0, 206, 0.372));
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    border-radius: 10px;
+    background: rgb(0, 21, 0);
+}
+
+/* Universal Selector*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa' , cursive;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: -moz-linear-gradient(170deg, var(--black) 0%, var(--gradientColor) 100%);
+    background: -webkit-linear-gradient(170deg, var(--black) 0%, var(--gradientColor) 100%);
+    background: linear-gradient(170deg, var(--black) 0%, var(--gradientColor) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#00830b",GradientType=1);
+    overflow:overlay;
+}
+
+h1 {
+    color: var(--textColor1);
+}
+
+img {
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    box-shadow: 2px 3px 5px var(--black), -2px 3px 5px var(--black);
+}
+
+.strip {
+    background-color: var(--black);
+}
+
+.strip1 {
+    background-color: var(--primary);
+}
+
+.strip2 {
+    background-color: var(--secondary);
+}
+
+/* Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+    .container.one {
+        flex-direction: column;
+        position: relative;
+        height: 100vh;
+        
+    }
+
+    .container.two {
+        flex-direction: column;
+        background-color: var(--black);
+        width: 100%;
+        padding: 10px 10px;
+    }
+
+    .container.three {
+        padding: 10px 10px;
+        background-color: var(--primary);
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .container.four {
+        min-height: 200px;
+        background-color: var(--secondary);
+    }
+
+/* Intro Box */
+.homeBox {   
+    display: flex;
+    flex-direction: column;
+}
+    .homeBox h3,h4 {
+        line-height: 1px;
+        margin: 5px;
+        color: white;
+    }
+
+    .homeBox h1 {
+        font-size: 6em;
+    }
+
+    .homeBox h3 {
+        transition-delay: 100ms;
+    }
+
+    .homeBox h4 {
+        transition-delay: 1400ms;
+    }
+
+/*About Me Box */
+.aboutBox{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    width: 75%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+    .aboutBox h1 {
+        line-height: 50px;
+        text-align: center;
+        font-size: 2.5em;
+        margin: 15px 15px;
+        transition-delay: 1ms;
+    }
+
+    .aboutBox p {
+        line-height: 20px;
+        color: var(--white);
+        margin: 10px 10px;
+        transition-delay: 2ms;
+    }
+
+    .aboutBox .btn {
+        transition-delay: .1s;
+    }
+
+    .aboutBox button {
+        line-height: 20px;
+        background-color: transparent;
+        color: var(--buttonColor);
+        border: 6px solid var(--buttonColor);
+        border-radius:15px;
+        margin: 10px 10px;
+        padding: 15px 25px;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        filter: drop-shadow(0 0 15px var(--buttonColor)) drop-shadow(0 0 50px var(--buttonColor)) contrast(2) brightness(2);
+        transition: .5s;
+      }
+      
+      button:hover {
+        color: black;
+        background-color: var(--buttonColor);
+        filter: drop-shadow(0 0 20px var(--buttonColor)) contrast(2) brightness(2);
+      }
+
+
+.projectBoxStack {
+    /* background-color: var(--secondary); */
+    background: linear-gradient(var(--secondary), var(--primary));
+    border-radius: 20px;
+    box-shadow: 1px 3px 8px var(--black), -1px 3px 8px var(--black);
+    display: flex;
+    flex-direction: column;
+    max-width: auto;
+    align-items: center;
+    gap: 13px;
+    margin: 20px;
+}
+
+    .stackHeading {
+        transition-delay: .2s;
+        margin: 10px 10px;
+        padding: 40px 10px;
+        font-size: 2.5em;
+    }
+
+    /* Project Boxes */
+    .projectBox {
+        position: relative;
+        background-color: var(--secondary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 75%;
+        height: auto;
+        gap: 40px;
+        margin: 15px;
+        padding: 20px 20px;
+        border-radius: 20px;
+        box-shadow: 1px 5px 8px -2px var(--gradientColor), -1px -5px 8px -2px var(--gradientColor);
+        transform: translateX(400%);
+        transition: transform 0.5s ease;
+    }
+
+    .projectBox.show:hover {
+        box-shadow: 1px 5px 8px -2px var(--textColor2), -1px -5px 8px -2px var(--textColor2);
+        transform: translateY(-10px);
+    }
+
+    .repoLink {
+        background-color: transparent;
+        padding: 12px 12px;
+        border-radius: 20px;
+        border: 3px solid var(--white);
+        color: var(--white);
+        transition: .3s ease;
+    }
+    
+    .repoLink:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    .projectBox p {
+        color: var(--white);
+        margin:10px 10px;
+        line-height: 30px;
+    }
+
+    .projectBox:nth-of-type(even) {
+        transform: translateX(-400%);
+    }
+
+    .projectBox.show {
+        transform: translateX(0);
+    }
+
+
+/* Scroll Animations */
+.hidden {
+    opacity: 0;
+    transform:translateY(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
