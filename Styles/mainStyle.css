@@ -163,28 +163,31 @@ img {
         text-align: center;
         font-size: 2.5em;
         margin: 15px 15px;
-        transition-delay: 1ms;
+        transition-delay: 0.4ms;
     }
 
     .aboutBox p {
         line-height: 20px;
         color: var(--white);
         margin: 10px 10px;
-        transition-delay: 2ms;
+        transition-delay: 0.6ms;
     }
 
     .aboutBox .btn {
-        transition-delay: .1s;
+        transition-delay: 0.9ms;
     }
 
-    .aboutBox button {
+    .aboutBox a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         line-height: 20px;
         background-color: transparent;
         color: var(--buttonColor);
         border: 6px solid var(--buttonColor);
         border-radius:15px;
         margin: 10px 10px;
-        padding: 15px 25px;
+        padding: 15px 15px;
         font-size: 20px;
         cursor: pointer;
         font-weight: bold;
@@ -192,7 +195,7 @@ img {
         transition: .5s;
       }
       
-      button:hover {
+      .aboutBox a:hover {
         color: black;
         background-color: var(--buttonColor);
         filter: drop-shadow(0 0 20px var(--buttonColor)) contrast(2) brightness(2);
@@ -213,7 +216,7 @@ img {
 }
 
     .stackHeading {
-        transition-delay: .2s;
+        transition-delay: 0.4ms;
         margin: 10px 10px;
         padding: 40px 10px;
         font-size: 2.5em;
