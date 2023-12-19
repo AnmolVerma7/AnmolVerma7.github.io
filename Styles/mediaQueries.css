@@ -28,7 +28,7 @@
     }
 
     .projectBox {
-        width: 90%;
+        width: 93%;
     }
 
     .projectBox h1 {
@@ -68,11 +68,11 @@
     }
 
     .projectBoxStack {
-        width: 90%;
+        width: 95%;
     }
 
     .projectBox {
-        width: 70%;
+        width: 85%;
     }
 }
 
@@ -82,7 +82,11 @@
     }
 
     .projectBoxStack {
-        width: 90%;
+        width: 95%;
+    }
+
+    .projectBox {
+        width: 85%;
     }
 
     .homeBox h1 {
@@ -97,7 +101,7 @@
     }
 
     .projectBox {
-        width: 70%;
+        width: 80%;
     }
 }
 
@@ -116,6 +120,6 @@
     }
 
     .projectBox {
-        width: 80%;
+        width: 75%;
     }
 }
