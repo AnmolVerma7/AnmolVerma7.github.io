@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Anmol's Portfolio Website">
+        <meta name="keywords" content="Anmol, Portfolio, Programmer">
+        <meta name="author" content="Anmol Verma">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Styles/mainStyle.css">
+        <link rel="stylesheet" href="/Styles/navStyle.css">
+        <link rel="stylesheet" href="/Styles/mediaQueries.css">
+
+        <!--icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+          
+        <!--Matrix Background-->
+        <script defer src="/Scripts/matrixBackground.js"></script>
+
+        <script defer src="/Scripts/hackedTextEffect.js"></script>
+
+        <!--NavBar-->
+        <script defer src="/Scripts/navBar.js"></script>
+
+        <!--Stack Scroll-->
+        <script defer src="/Scripts/stackScroll.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Background -->
+        <canvas id="canv"></canvas>
+
+        <!--Header with Navbar, Logo -->
+      <nav>
+        <ul class="menu">
+          <li class="logo"><a href="#Top">AV</a></li>
+          <li class="item"><a href="#AboutMe">About Me</a></li>
+          <li class="item"><a href="#Experience">Experience</a></li>
+          <li class="item"><a href="#Projects">Projects</a></li>
+          <li class="item"><a href="#Contact">Contact</a></li>
+
+          <li class="toggle"><a href="#"><i class="fa fa-bars"></i></a></li>
+        </ul>
+      </nav>
+
+      <main class = "main-box">
+        <div class="container">
+            <h1 data-value="ANMOL">ANMOL</h1>
+        </div>
+
+        <!--Scroll Down-->
+        <a href ="#AboutMe">
+            <div class="scroll-down"></div>
+        </a>
+      </main>
+
+      <!-- About Me-->
+      <section id = AboutMe class = "second-box">
+        <div class="container">
+            <div class="aboutMe-box">
+                <h2>About Me</h2>
+                <p>Hi there, I'm Anmol! I'm currently majoring in Computer Information Systems 
+                  with a strong focus on deepening my expertise in computing. My 
+                  goal is to pursue a career in cyber/computer security, driven by 
+                  a commitment to enhance digital safety and privacy in our 
+                  interconnected world.</p>
+                <div class="btn hidden show">
+                    <a href="Files/AV Resume 2024.pdf" target="_blank">See My Resume</a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="third-box">
+        <div id = Experience class="container">
+            <div class="experience-box">
+                <h2>Experience</h2>
+                <img src ="/Images/AHSLogo.png" width = "200"></img>
+                <h3>IT Work Experience Student</h3>
+                <p>As an IT Co-op Work Experience Student I participated 
+                  in a Technical Dress Rehearsal, conducting tests, configurations, and 
+                  troubleshooting across a variety of non-medical devices and 
+                  workstations. I contributed to technical documentation on a range 
+                  of issues, enhancing network and application reliability across AHS 
+                  sites. Additonally, I streamlined support processes by generating IT tickets to 
+                  address and resolve diverse technical issues effectively.</p>
+            </div>
+        </div>
+      </section>
+
+      <!--Projects-->
+      <section id = Projects class="fourth-box">
+        <div class="container">
+          <div class="project-stack">
+            <h2>Projects</h2>
+            <div class="project-box show">
+              <h1>3D Game in Unity</h1>
+              <img src = "Images/UnityGame.gif" width="700"></img>
+              <a class = "repoLink" href = "https://github.com/AnmolVerma7/3DUnityGame" target = "_blank">View Repository</a>
+              <p>"A" and "D" a game made by me after learning C# while using the .NET framework in Unity. 
+                It features a few levels that were very fun to design. A project I will continue to work on; as game development is a bit tough, it is 
+                enjoyable!</p>
+            </div>
+            <div class="project-box">
+              <h1>A* Pathfinding Visualizer</h1>
+              <img src = "Images/PathfindingVideo.gif" width = "700"></img>
+              <a class = "repoLink" href = "https://github.com/AnmolVerma7/AStar-PathFinding-Python" target = "_blank">View Repository</a>
+              <p>Showcases an implementation of the A* (A Star) Pathfinding Algorithm using Python and Pygame. It features an 
+                interactive grid where users can set start and end points, add obstacles, and visualize the algorithm's pathfinding 
+                process in real time.</p>
+            </div>
+            <div class="project-box">
+
+            </div>
+            <div class="project-box"></div>
+          </div>        
+        </div>
+      </section>
+
+      <!--Section - Contact-->
+      <section class="fifth-box">
+
+      </section>
+    </body>
+</html>

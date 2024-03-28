@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* Variables */
+:root {
+    /* Primary Secondary */
+    --primary: rgb(0, 238, 52);
+    --secondary:rgb(2, 150, 0);
+
+    /*B/W*/
+    --black: #000000;
+    --white: #ffffff;
+
+    /* Gradient Color */
+    --gradientColor: #121212;
+    
+    /* Text Color */
+    --textColor1: #00ff00;
+    --textColor2: #006426;
+
+    /* Button Color */
+    --buttonColor: #00ff26;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.372), rgba(0, 255, 38, 0.372));
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    border-radius: 10px;
+    background: rgb(0, 0, 0);
+}
+
+/* Universal Selector*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background: -moz-linear-gradient(170deg, var(--black) 0%, var(--gradientColor) 100%);
+    background: -webkit-linear-gradient(170deg, var(--black) 0%, var(--gradientColor) 100%);
+    background: linear-gradient(170deg, var(--black) 0%, var(--gradientColor) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#00830b",GradientType=1); */
+    overflow:overlay;
+    background-color: #000000;
+
+}
+#canv {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-box, .second-box, .third-box, .fourth-box, .fifth-box {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    color:white;
+    overflow-x: hidden;
+}
+
+.aboutMe-box h2, .experience-box h2, .project-stack h2{
+    font-size: 2rem;
+}
+
+.project-box h1 {
+    text-align: center;
+}
+
+.main-box {
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .main-box h1 {
+        text-align: center;
+        color: var(--textColor1);
+        font-size: 6.5rem;
+    }
+
+.second-box {
+    height: calc(100vh - 600px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .aboutMe-box {
+        background-color: var(--gradientColor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+.third-box {
+    height: calc(100vh - 600px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .experience-box {
+        background-color: var(--gradientColor);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+.fourth-box {
+    height: calc(100vh - 90px);
+    overflow-y: hidden; 
+}
+
+    .project-stack {
+        background-color: var(--gradientColor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+          
+    }
+
+        .project-box {
+            position: relative;
+            background-color:#232323;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+
+            transform: translateX(400%);
+            transition: transform 0.5s ease;
+        }
+
+        .project-box:nth-of-type(even) {
+            transform: translateX(-400%);
+        }
+    
+        .project-box.show {
+            transform: translateX(0);
+        }
