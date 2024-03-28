@@ -63,6 +63,14 @@
   .container {
     max-width: 425px;
   }
+
+  .second-box {
+    height: 100vh;
+  }
+
+  .third-box {
+    height: 110vh;
+  }
 }
 
 /* sm */
@@ -70,6 +78,13 @@
   .container {
     max-width: 640px;
   }
+
+  .third-box {
+    height: 130svh;
+  }
+    .project-stack img {
+      width: 30rem;
+    }
 }
 
 /* md */
@@ -77,6 +92,10 @@
   .container {
     max-width: 768px;
   }
+
+    .project-stack img {
+      width: 35rem;
+    }
 }
 
 /* lg */
@@ -84,6 +103,25 @@
   .container {
     max-width: 1024px;
   }
+  
+  .second-box .container, .third-box .container,
+  .fourth-box .container {
+      display: flex;
+      width: 60rem;
+  }
+
+  .main-box h1 {
+    font-size: 12rem;
+  }
+
+  .second-box, .third-box {
+    height: auto;
+  }
+
+  .fourth-box {
+    margin-top: 22rem;
+    height: auto;
+  } 
 }
 
 /* xl */
