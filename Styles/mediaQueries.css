@@ -93,6 +93,18 @@
     max-width: 768px;
   }
 
+  .second-box {
+    height: 50vh;
+  }
+
+  .third-box {
+    height: 70vh;
+  }
+
+    #Experience {
+      margin-top: -250px;
+    }
+
     .project-stack img {
       width: 35rem;
     }
@@ -104,24 +116,39 @@
     max-width: 1024px;
   }
   
-  .second-box .container, .third-box .container,
-  .fourth-box .container {
-      display: flex;
-      width: 60rem;
+  .second-box .container, .third-box .container {
+    display: flex;
+    width: 60rem;
   }
 
-  .main-box h1 {
-    font-size: 12rem;
+    .main-box h1 {
+      font-size: 12rem;
+    }
+
+  .second-box {
+    height: 40vh;
   }
 
-  .second-box, .third-box {
+  .third-box {
     height: auto;
   }
+
+    #Experience {
+      margin-top: 0px;
+    }
 
   .fourth-box {
-    margin-top: 22rem;
+    margin-top: 18rem;
     height: auto;
-  } 
+  }
+
+  .fourth-box .container {
+    width: 60rem;
+  }
+
+    .project-box {
+      width: 40rem;
+    }
 }
 
 /* xl */

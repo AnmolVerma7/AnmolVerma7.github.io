@@ -60,8 +60,8 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#00830b",GradientType=1); */
     overflow:overlay;
     background-color: #000000;
-
 }
+
 #canv {
     position: fixed;
     top: 0;
