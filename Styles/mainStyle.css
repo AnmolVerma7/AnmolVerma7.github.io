@@ -151,6 +151,7 @@ body {
             align-items: center;
             gap: 2rem;
             width: 100%;
+            border-radius: 10px;
 
             transform: translateX(400%);
             transition: transform 0.5s ease;
@@ -163,3 +164,15 @@ body {
         .project-box.show {
             transform: translateX(0);
         }
+
+.fifth-box {
+    height: calc(100vh - 600px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .contact-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
