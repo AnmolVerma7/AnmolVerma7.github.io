@@ -279,6 +279,10 @@ body {
             transition: transform 0.5s ease;
         }
 
+        .project-box a {
+            color: var(--textColor1);
+        }
+
         .project-box:nth-of-type(even) {
             transform: translateX(-400%);
         }
