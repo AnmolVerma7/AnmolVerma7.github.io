@@ -56,6 +56,10 @@
     .project-stack img {
       width: 17rem;
     }
+
+  .fifth-box {
+    height: 50vh;
+  }
 }
 
 /* xs */
@@ -71,6 +75,10 @@
   .third-box {
     height: 110vh;
   }
+
+  .contact-box ul li a {
+    margin: 0 0.5rem;
+  }
 }
 
 /* sm */
@@ -84,6 +92,10 @@
   }
     .project-stack img {
       width: 30rem;
+    }
+
+    .contact-box ul li a {
+      margin: 0 1.5rem;
     }
 }
 
