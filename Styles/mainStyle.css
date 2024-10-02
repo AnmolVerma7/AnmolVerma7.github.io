@@ -239,6 +239,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
     .experience-box {
@@ -248,6 +249,7 @@ body {
         justify-content: center;
         align-items: center;
         justify-content: space-evenly;
+        height: 650px;
     }
 
 .fourth-box {

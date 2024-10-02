@@ -42,7 +42,18 @@
 
   .third-box {
     height: 150vh;
+    margin-bottom: 100px;
   }
+
+    .experience-box {
+      height: 1250px;
+    }
+
+    #Experience {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
   .fourth-box {
     height: auto;
@@ -73,7 +84,7 @@
   }
 
   .third-box {
-    height: 110vh;
+    height: 145vh;
   }
 
   .contact-box ul li a {
@@ -88,8 +99,13 @@
   }
 
   .third-box {
-    height: 130svh;
+    height: 135svh;
   }
+
+    .experience-box{ 
+      justify-content:unset;
+    }
+
     .project-stack img {
       width: 30rem;
     }
@@ -110,8 +126,12 @@
   }
 
   .third-box {
-    height: 70vh;
+    height: 140vh;
   }
+
+    .experience-box {
+      height: 700px;
+    }
 
     #Experience {
       margin-top: -250px;
@@ -139,11 +159,16 @@
 
   .second-box {
     height: 40vh;
+    margin-bottom: 115px;
   }
 
   .third-box {
     height: auto;
   }
+
+    .experience-box {
+      height: 620px;
+    }
 
     #Experience {
       margin-top: 0px;
@@ -167,6 +192,10 @@
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
+  }
+
+  .third-box {
+    display: flex;
   }
 }
 
