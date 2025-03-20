@@ -1,207 +1,339 @@
-/* xs */
-@media (min-width: 475px) {}
-
-/* sm */
-@media (min-width: 640px) {} 
-
-/* md */
-@media (min-width: 768px) {} 
-
-/* lg */
-@media (min-width: 1024px) {}
-
-/* xl */
-@media (min-width: 1280px) {} 
-
-/* 2xl */
-@media (min-width: 1536px) {}
-
+/* Responsive Design */
 .container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 /* Smallest */
 @media (min-width: 375px) {
-  .container {
-    max-width: 375px;
-  }
-  
-  .aboutMe-box, .experience-box, .project-stack {
-      margin: 1rem;
-      padding: 1rem;
-      gap: 1.5rem;
-  }
+	.container {
+		max-width: 375px;
+	}
+	
+	.aboutMe-box, .experience-box, .project-stack {
+		margin: 1rem;
+		padding: 1rem;
+		gap: 1.5rem;
+	}
 
-  .second-box {
-    height: 70vh;
-  }
+	.second-box {
+		height: 70vh;
+	}
 
-  .third-box {
-    height: 150vh;
-    margin-bottom: 100px;
-  }
+	.third-box {
+		height: 150vh;
+		margin-bottom: 100px;
+	}
 
-    .experience-box {
-      height: 1250px;
-    }
+	.experience-box {
+		height: 1250px;
+	}
 
-    #Experience {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+	#Experience {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 
-  .fourth-box {
-    height: auto;
-  }
+	.fourth-box {
+		height: auto;
+	}
 
-    .project-box {
-      margin: 1rem;
-      padding: 1rem;
-    }
+	.project-box {
+		margin: 1rem;
+		padding: 1rem;
+	}
 
-    .project-stack img {
-      width: 17rem;
-    }
+	.project-stack img {
+		width: 17rem;
+	}
 
-  .fifth-box {
-    height: 50vh;
-  }
+	.fifth-box {
+		height: 50vh;
+	}
 }
 
 /* xs */
 @media (min-width: 425px) {
-  .container {
-    max-width: 425px;
-  }
+	.container {
+		max-width: 425px;
+	}
 
-  .second-box {
-    height: 100vh;
-  }
+	.second-box {
+		height: 100vh;
+	}
 
-  .third-box {
-    height: 145vh;
-  }
+	.third-box {
+		height: 145vh;
+	}
 
-  .contact-box ul li a {
-    margin: 0 0.5rem;
-  }
+	.contact-box ul li a {
+		margin: 0 0.5rem;
+	}
 }
 
 /* sm */
 @media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+	.container {
+		max-width: 640px;
+	}
 
-  .third-box {
-    height: 135svh;
-  }
+	.third-box {
+		height: 135svh;
+	}
 
-    .experience-box{ 
-      justify-content:unset;
-    }
+	.experience-box { 
+		justify-content: unset;
+	}
 
-    .project-stack img {
-      width: 30rem;
-    }
+	.project-stack img {
+		width: 30rem;
+	}
 
-    .contact-box ul li a {
-      margin: 0 1.5rem;
-    }
+	.contact-box ul li a {
+		margin: 0 1.5rem;
+	}
 }
 
 /* md */
 @media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+	.container {
+		max-width: 768px;
+	}
 
-  .second-box {
-    height: 50vh;
-  }
+	.second-box {
+		height: 50vh;
+	}
 
-  .third-box {
-    height: 140vh;
-  }
+	.third-box {
+		height: 140vh;
+	}
 
-    .experience-box {
-      height: 700px;
-    }
+	.experience-box {
+		height: 700px;
+	}
 
-    #Experience {
-      margin-top: -250px;
-    }
+	#Experience {
+		margin-top: -250px;
+	}
 
-    .project-stack img {
-      width: 35rem;
-    }
+	.project-stack img {
+		width: 35rem;
+	}
+	
+	/* Tablet menu */
+	.menu {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.logo {
+		flex: 1;
+	}
+
+	.item.button {
+		width: auto;
+		order: 1;
+		display: block;
+	}
+
+	.toggle {
+		flex: 1;
+		text-align: right;
+		order: 2;
+	}
+
+	/* Button up from tablet screen */
+	.menu li.button a {
+		padding: 10px 15px;
+		margin: 5px 0;
+	}
+
+	.button a {
+		background: #0080ff;
+		border: 1px royalblue solid;
+	}
+
+	.button.secondary {
+		border: 0;
+	}
+
+	.button.secondary a {
+		background: transparent;
+		border: 1px #0080ff solid;
+	}
+
+	.button a:hover {
+		text-decoration: none;
+	}
+
+	.button:not(.secondary) a:hover {
+		background: royalblue;
+		border-color: darkblue;
+	}
 }
 
 /* lg */
 @media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-  
-  .second-box .container, .third-box .container {
-    display: flex;
-    width: 60rem;
-  }
+	.container {
+		max-width: 1024px;
+	}
+	
+	.second-box .container, .third-box .container {
+		display: flex;
+		width: 60rem;
+	}
 
-    .main-box h1 {
-      font-size: 12rem;
-    }
+	.main-box h1 {
+		font-size: 12rem;
+	}
 
-  .second-box {
-    height: 40vh;
-    margin-bottom: 115px;
-  }
+	.second-box {
+		height: 40vh;
+		margin-bottom: 115px;
+	}
 
-  .third-box {
-    height: auto;
-  }
+	.third-box {
+		height: auto;
+	}
 
-    .experience-box {
-      height: 620px;
-    }
+	.experience-box {
+		height: 620px;
+	}
 
-    #Experience {
-      margin-top: 0px;
-    }
+	#Experience {
+		margin-top: 0px;
+	}
 
-  .fourth-box {
-    margin-top: 18rem;
-    height: auto;
-  }
+	.fourth-box {
+		margin-top: 18rem;
+		height: auto;
+	}
 
-  .fourth-box .container {
-    width: 60rem;
-  }
+	.fourth-box .container {
+		width: 60rem;
+	}
 
-    .project-box {
-      width: 40rem;
-    }
+	.project-box {
+		width: 40rem;
+	}
+	
+	/* Desktop menu */
+	.menu {
+		align-items: flex-start;
+		flex-wrap: nowrap;
+		background: none;
+	}
+
+	.logo {
+		order: 0;
+		display: flex;
+	}
+
+	.item {
+		order: 1;
+		position: relative;
+		display: block;
+		width: auto;
+	}
+	
+	.button {
+		order: 2;
+	}
+
+	.toggle {
+		display: none;
+	}
 }
 
 /* xl */
 @media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
+	.container {
+		max-width: 1280px;
+	}
 
-  .third-box {
-    display: flex;
-  }
+	.third-box {
+		display: flex;
+	}
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
+	.container {
+		max-width: 1536px;
+	}
+}
+
+/* Additional responsive improvements */
+@media (min-width: 1921px) {
+	.container {
+		max-width: 1800px;
+	}
+	
+	.main-box h1 {
+		font-size: 15rem;
+	}
+	
+	.aboutMe-box h2, .experience-box h2, .project-stack h2 {
+		font-size: 3rem;
+	}
+	
+	.aboutMe-box p, .experience-box p, .project-box p {
+		font-size: 1.25rem;
+	}
+	
+	.project-box {
+		width: 60rem;
+	}
+	
+	.project-stack img {
+		width: 45rem;
+	}
+}
+
+/* Mobile improvements */
+@media (max-width: 425px) {
+	.main-box h1 {
+		font-size: 4rem;
+	}
+	
+	.contact-box ul {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	
+	.contact-box ul li a {
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		font-size: 30px;
+		margin: 0 0.3rem;
+	}
+	
+	.project-box img {
+		width: 100%;
+		max-width: 300px;
+	}
+}
+
+/* Fix for very small screens */
+@media (max-width: 374px) {
+	.main-box h1 {
+		font-size: 3.5rem;
+	}
+	
+	.aboutMe-box h2, .experience-box h2, .project-stack h2 {
+		font-size: 1.5rem;
+	}
+	
+	.contact-box ul li a {
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		font-size: 24px;
+	}
 }
