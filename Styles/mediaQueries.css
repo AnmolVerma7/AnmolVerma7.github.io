@@ -337,3 +337,10 @@
 		font-size: 24px;
 	}
 }
+
+/* Ensure experience top outline is visible on small screens */
+@media (max-width: 767px) {
+	#Experience {
+		padding-top: 0.5rem; /* creates space to show the top border */
+	}
+}

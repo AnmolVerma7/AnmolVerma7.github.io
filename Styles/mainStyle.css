@@ -1,24 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 /* Variables */
 :root {
-	/* Primary Secondary */
-	--primary: rgb(0, 238, 52);
-	--secondary: rgb(2, 150, 0);
-
 	/*B/W*/
 	--black: #000000;
 	--white: #ffffff;
-
-	/* Gradient Color */
-	--gradientColor: #121212;
+	
+	/* Matrix rain color (customizable) */
+	--matrixRainColor: #00E5FF;
 	
 	/* Text Color */
-	--textColor1: #00ff00;
-	--textColor2: #006426;
+	--textColor1: #fbff00;
 
 	/* Button Color */
-	--buttonColor: #00ff26;
+	--buttonColor: #fbff00;
+
+	/* Panel gradient (shared section + project boxes) */
+	--panelGradient: linear-gradient(180deg, #1B0F13 0%, #151018 100%);
+
+	/* Panel/Glass borders */
+	--panelBorderColor: rgba(153, 0, 0, 0.26);
+
+	/* Navbar glass gradient (with alpha) */
+	--navbarGlassBgStartAlpha: rgba(27, 15, 19, 0.70);
+	--navbarGlassBgEndAlpha: rgba(21, 16, 24, 0.70);
+
+	/* Shadows */
+	--navShadow1: rgba(0, 0, 0, 0.65);
+	--navShadowInset: rgba(255, 255, 255, 0.04);
+
+	/* Menu hover background */
+	--menuHoverBg: rgba(255, 255, 255, 0.65);
+
+	/* Scrollbar */
+	--scrollbarThumbStart: rgba(0, 0, 0, 0.372);
+	--scrollbarThumbEnd: rgba(0, 174, 255, 0.372);
+
+	/* Text + accents */
+	--mutedWhite: #f0f0f0;
+	--darkButtonText: #050801;
+
+	/* Brand colors */
+	--linkedinColor: #0E76A8;
+	--githubColor: #6e5494;
+	--discordColor: #7289DA;
+	--accentBlue: #1da1f2; /* used by legacy .github selector */
+
+	/* Buttons (navbar) */
+	--buttonPrimaryBg: #0080ff;
+	--buttonPrimaryBorder: royalblue;
+	--buttonPrimaryOutline: #0080ff;
+	--buttonPrimaryHoverBg: royalblue;
+	--buttonPrimaryHoverBorder: darkblue;
 }
 
 /* Scrollbar Customization */
@@ -31,14 +65,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.372), rgba(0, 255, 38, 0.372));
-	border: 1px solid black;
+	background: linear-gradient(to bottom, var(--scrollbarThumbStart), var(--scrollbarThumbEnd));
+	border: 1px solid var(--black);
 	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-corner {
 	border-radius: 10px;
-	background: rgb(0, 0, 0);
+	background: var(--black);
 }
 
 /* Universal Selector*/
@@ -55,7 +89,7 @@ html {
 
 body {
 	overflow: overlay;
-	background-color: #000000;
+	background-color: var(--black);
 }
 
 #canv {
@@ -68,7 +102,7 @@ body {
 	background-color: transparent;
 	position: relative;
 	z-index: 1;
-	color: white;
+	color: var(--white);
 	overflow-x: hidden;
 }
 
@@ -102,14 +136,16 @@ body {
 }
 
 .aboutMe-box {
-	background-color: var(--gradientColor);
+	/* Unified panel gradient */
+	background: var(--panelGradient);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
+	border: 1px solid var(--panelBorderColor); /* thin outline */
 }
 
-.aboutMe-box a {
+a.repoLink, .aboutMe-box a {
 	position: relative;
 	display: inline-block;
 	padding: 15px 20px;
@@ -123,9 +159,9 @@ body {
 	font-weight: 700;
 }
 
-.aboutMe-box a:hover {
+a.repoLink:hover, .aboutMe-box a:hover {
 	background: var(--buttonColor);
-	color: #050801;
+	color: var(--darkButtonText);
 	box-shadow: 0 0 5px var(--buttonColor),
 		0 0 25px var(--buttonColor),
 		0 0 50px var(--buttonColor),
@@ -141,12 +177,12 @@ body {
 	filter: hue-rotate(110deg);
 }
 
-.aboutMe-box a span {
+.aboutMe-box a span, a.repoLink span {
 	position: absolute;
 	display: block;
 }
 
-.aboutMe-box a span:nth-child(1) {
+.aboutMe-box a span:nth-child(1), a.repoLink span:nth-child(1) {
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -166,7 +202,7 @@ body {
 	}
 }
 
-.aboutMe-box a span:nth-child(2) {
+.aboutMe-box a span:nth-child(2), a.repoLink span:nth-child(2) {
 	top: -100%;
 	right: 0;
 	width: 2px;
@@ -187,7 +223,7 @@ body {
 	}
 }
 
-.aboutMe-box a span:nth-child(3) {
+.aboutMe-box a span:nth-child(3), a.repoLink span:nth-child(3) {
 	bottom: 0;
 	right: 0;
 	width: 100%;
@@ -208,7 +244,7 @@ body {
 	}
 }
 
-.aboutMe-box a span:nth-child(4) {
+.aboutMe-box a span:nth-child(4), a.repoLink span:nth-child(4) {
 	bottom: -100%;
 	left: 0;
 	width: 2px;
@@ -238,13 +274,15 @@ body {
 }
 
 .experience-box {
-	background-color: var(--gradientColor);
+	/* Unified panel gradient */
+	background: var(--panelGradient);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	justify-content: space-evenly;
 	height: 650px;
+	border: 1px solid var(--panelBorderColor); /* thin outline */
 }
 
 .fourth-box {
@@ -253,17 +291,18 @@ body {
 }
 
 .project-stack {
-	background-color: var(--gradientColor);
+	/* Unified panel gradient */
+	background: var(--panelGradient);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	
+	border: 1px solid var(--panelBorderColor); /* thin outline */
 }
 
 .project-box {
 	position: relative;
-	background-color: #232323;
+	background: var(--panelGradient); /* match sections, no outline */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -273,9 +312,10 @@ body {
 	border-radius: 10px;
 	transform: translateX(400%);
 	transition: transform 0.5s ease;
+	border: 1px solid var(--panelBorderColor); /* thin outline for project boxes */
 }
 
-.project-box a {
+.project-box a:not(.repoLink) {
 	color: var(--textColor1);
 }
 
@@ -323,7 +363,7 @@ body {
 	font-size: 40px;
 	text-align: center;
 	text-decoration: none;
-	color: #f0f0f0;
+	color: var(--mutedWhite);
 	transition: .5s;
 }
 
@@ -397,33 +437,33 @@ body {
 }
 
 .linkedIn:hover {
-	color: rgb(14, 118, 168);
+	color: var(--linkedinColor);
 }
 
 .linkedIn:hover span { 
-	background: rgb(14, 118, 168);
+	background: var(--linkedinColor);
 }
 
 .github:hover {
-	color: #6e5494;
+	color: var(--githubColor);
 }
 
 .github:hover span { 
-	background: #6e5494;
+	background: var(--githubColor);
 }
 
 .discord:hover {
-	color: #7289DA;
+	color: var(--discordColor);
 }
 
 .discord:hover span { 
-	background: #7289DA;
+	background: var(--discordColor);
 }
 
 .contact-box ul li a .github {
-	color: #1da1f2;
+	color: var(--accentBlue);
 }
 
 .contact-box ul li a:hover:nth-child(3) {
-	color: #7289DA;
+	color: var(--discordColor);
 }
