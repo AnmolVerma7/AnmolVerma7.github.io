@@ -13,8 +13,6 @@ function toggleMenu() {
   }
 }
 
-
-
 /* Event Listeners */
 toggle.addEventListener("click", toggleMenu, false);
 for (let item of items) {

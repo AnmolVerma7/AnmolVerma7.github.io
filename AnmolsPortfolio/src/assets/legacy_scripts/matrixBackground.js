@@ -1,20 +1,21 @@
-const canvas = document.getElementById('canv');
+const canvas = document.getElementById("canv");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext("2d");
 let cols = Math.floor(window.innerWidth / 20) + 1;
 let ypos = Array(cols).fill(0);
 
 // Read customizable colors from CSS variables
 const rootStyles = getComputedStyle(document.documentElement);
-const MATRIX_COLOR = (rootStyles.getPropertyValue('--matrixRainColor') || '#00ff00').trim() || '#00ff00';
+const MATRIX_COLOR =
+  (rootStyles.getPropertyValue("--matrixRainColor") || "#00ff00").trim() || "#00ff00";
 const FADE_ALPHA = 0.08; // Slightly stronger fade to prevent ghosting/imprints
 
 // Helper to build the vertical gradient background
 function buildGradient(h) {
   const grad = ctx.createLinearGradient(0, 0, 0, h);
-  grad.addColorStop(0, '#1B0F13');
-  grad.addColorStop(1, '#151018');
+  grad.addColorStop(0, "#1B0F13");
+  grad.addColorStop(1, "#151018");
   return grad;
 }
 
@@ -22,10 +23,10 @@ function buildGradient(h) {
 ctx.fillStyle = buildGradient(canvas.height);
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-function matrix () {
+function matrix() {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  
+
   if (canvas.width !== w) {
     canvas.width = w;
     cols = Math.floor(window.innerWidth / 20) + 1;
@@ -43,7 +44,7 @@ function matrix () {
   ctx.fillRect(0, 0, w, h);
 
   ctx.fillStyle = MATRIX_COLOR; // Rain Color from CSS variable
-  ctx.font = '12pt monospace';
+  ctx.font = "12pt monospace";
 
   ypos.forEach((y, ind) => {
     const text = String.fromCharCode(Math.random() * 128);
