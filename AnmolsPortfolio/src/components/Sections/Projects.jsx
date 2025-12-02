@@ -61,10 +61,10 @@ const ProjectCard = ({ project, index }) => {
   return (
     <motion.div
       className="project-card"
-      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, margin: "-100px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.4, ease: "linear" }}
     >
       <Pad>
         <div className="card-header">

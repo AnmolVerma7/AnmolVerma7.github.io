@@ -33,6 +33,7 @@ const Button = ({
       <span className="button__content">{children}</span>
       <style jsx>{`
         .button {
+          position: relative;
           background-color: transparent;
           border: 1px solid var(--colors-primary--500);
           border-radius: 2px;
@@ -45,6 +46,20 @@ const Button = ({
           text-align: left;
           text-transform: uppercase;
           transition: all 0.2s ease;
+        }
+
+        .btn {
+          position: relative;
+          display: inline-block;
+          padding: 0.75rem 2rem;
+          font-family: var(--fonts-secondary);
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          clip-path: var(--ui-notch-path);
+          border: 2px solid;
         }
 
         .button:hover {
@@ -67,7 +82,7 @@ const Button = ({
 
         .button--size-lg::before,
         .button--size-xl::before {
-          background-color: currentcolor;
+          background-color: var(--colors-primary--500);
           bottom: 5px;
           content: "";
           display: block;
@@ -78,6 +93,11 @@ const Button = ({
           transform: rotate(-45deg);
           width: var(--ui-notch-hypotenuse);
           z-index: 100;
+        }
+
+        .button--primary.button--size-lg::before,
+        .button--primary.button--size-xl::before {
+          background-color: var(--colors-secondary--500);
         }
 
         .button--size-xl {
