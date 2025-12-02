@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#050505"/>
+  
+  <!-- Definitions for Glow Effects -->
+  <defs>
+    <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- "A" Shape (Red) -->
+  <!-- Left Leg -->
+  <line x1="100" y1="420" x2="256" y2="80" 
+        stroke="#d10000" 
+        stroke-width="50" 
+        stroke-linecap="round"
+        filter="url(#glow-red)"/>
+  <!-- Right Leg -->
+  <line x1="412" y1="420" x2="256" y2="80" 
+        stroke="#d10000" 
+        stroke-width="50" 
+        stroke-linecap="round"
+        filter="url(#glow-red)"/>
+  <!-- Crossbar -->
+  <line x1="150" y1="280" x2="362" y2="280" 
+        stroke="#d10000" 
+        stroke-width="40" 
+        stroke-linecap="round"
+        filter="url(#glow-red)"/>
+
+  <!-- "V" Shape (Matrix Cyan) - Overlaying -->
+  <path d="M 100 80 L 256 420 L 412 80" 
+        stroke="#00E5FF" 
+        stroke-width="50" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        filter="url(#glow-cyan)"
+        style="mix-blend-mode: screen; opacity: 0.9;"/>
+
+</svg>

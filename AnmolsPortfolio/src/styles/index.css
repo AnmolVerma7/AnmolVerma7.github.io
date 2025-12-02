@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=VT323&display=swap");
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html,
+body {
+  background: transparent;
+  color: var(--colors-on_bg--500);
+  font-family: var(--fonts-primary);
+  font-size: 100%;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Utilities */
+.text-heading1,
+.text-heading2,
+.text-heading3,
+.text-heading4,
+.text-heading5,
+.text-heading6 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: var(--ui-glow-text);
+}
+
+.text-heading3 {
+  font-size: 1.125rem;
+  color: var(--colors-secondary--500);
+}
+
+.pad {
+  background-color: var(--colors-bg--300);
+  border: 2px solid var(--colors-primary--600);
+  clip-path: var(--ui-notch-path);
+}
+
+.pad__body {
+  padding: 1rem;
+  padding-bottom: var(--ui-notch-amount);
+}
+
+.pad::before {
+  background-color: var(--colors-primary--600);
+  bottom: 5px;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  right: -6px;
+  top: auto;
+  transform: rotate(-45deg);
+  width: var(--ui-notch-hypotenuse);
+  z-index: 100;
+}
