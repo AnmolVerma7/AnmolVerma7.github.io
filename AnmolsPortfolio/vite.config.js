@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/", // GitHub Pages base path
   plugins: [react()],
-  base: "/", // User Pages deploy to root domain
 });
