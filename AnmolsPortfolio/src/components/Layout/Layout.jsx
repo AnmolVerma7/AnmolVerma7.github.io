@@ -249,6 +249,12 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
         }
         .app-header {
           margin: 1rem 0 2rem 0;
+          position: relative;
+          z-index: 1;
+        }
+        main {
+          position: relative;
+          z-index: 1;
         }
         .header-content {
           display: flex;

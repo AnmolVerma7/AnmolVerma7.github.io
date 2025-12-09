@@ -7,7 +7,7 @@
 
 html,
 body {
-  background: transparent;
+  background: var(--colors-bg--300);
   color: var(--colors-on_bg--500);
   font-family: var(--fonts-primary);
   font-size: 100%;
