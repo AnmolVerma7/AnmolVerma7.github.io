@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/index.css"; // Ensure styles are loaded
+import "../../styles/index.css";
 
 /**
  * Reusable Button component with Cyberpunk styling.
@@ -48,19 +48,7 @@ const Button = ({
           transition: all 0.2s ease;
         }
 
-        .btn {
-          position: relative;
-          display: inline-block;
-          padding: 0.75rem 2rem;
-          font-family: var(--fonts-secondary);
-          font-size: 1rem;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          clip-path: var(--ui-notch-path);
-          border: 2px solid;
-        }
+
 
         .button:hover {
           background-color: var(--colors-primary--800);

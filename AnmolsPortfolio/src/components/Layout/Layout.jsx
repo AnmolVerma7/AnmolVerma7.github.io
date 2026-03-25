@@ -36,21 +36,21 @@ const NavItem = ({ text, isActive, onClick, notificationCount = 0 }) => (
         text-transform: uppercase;
         transition:
           transform 0.25s,
-          color 0.3s ease; /* Combined transitions */
+          color 0.3s ease;
         line-height: 1.4rem;
         cursor: pointer;
-        color: var(--colors-primary--500); /* Changed color */
-        text-decoration: none; /* Added */
+        color: var(--colors-primary--500);
+        text-decoration: none;
       }
       .nav__link:hover {
-        color: #ffffff; /* Changed color */
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Added text-shadow */
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
       }
       .nav__link--active {
         color: var(--colors-secondary--500);
         font-size: 1.25rem;
         transform: none;
-        text-shadow: var(--ui-glow-text); /* Added text-shadow */
+        text-shadow: var(--ui-glow-text);
       }
       .badge-mini {
         border: 1px solid var(--colors-tertiary--500);
@@ -216,7 +216,7 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
               <Hamburger
                 toggled={isMobileMenuOpen}
                 toggle={setIsMobileMenuOpen}
-                color="#00e5ff" // --colors-primary--500
+                color="#00e5ff"
                 size={28}
                 distance="sm"
                 rounded
@@ -297,75 +297,7 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
           }
         }
 
-        /* Mobile Drawer Styles */
-        :global(.backdrop) {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.8);
-          z-index: 9999;
-          backdrop-filter: blur(2px);
-        }
-        :global(.drawer) {
-          position: fixed;
-          top: 0;
-          right: 0;
-          width: 80%;
-          max-width: 300px;
-          height: 100%;
-          background: var(--colors-bg--300);
-          border-left: 2px solid var(--colors-primary--600);
-          z-index: 10000;
-          box-shadow: -5px 0 20px rgba(0, 229, 255, 0.2);
-          display: flex;
-          flex-direction: column;
-        }
-        :global(.drawer-content) {
-          padding: 2rem;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          overflow-y: auto;
-          background: #000;
-        }
-        :global(.drawer-header) {
-          border-bottom: 1px solid var(--colors-primary--600);
-          padding-bottom: 1rem;
-          margin-bottom: 2rem;
-        }
-        :global(.drawer-title) {
-          color: var(--colors-secondary--500);
-          font-family: var(--fonts-secondary);
-          letter-spacing: 0.1em;
-        }
-        :global(.mobile-nav-list) {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          flex-grow: 1;
-        }
-        :global(.drawer-footer) {
-          border-top: 1px solid var(--colors-primary--600);
-          padding-top: 1rem;
-          margin-top: auto;
-        }
-        :global(.status-indicator) {
-          display: flex;
-          align-items: center;
-          color: var(--colors-tertiary--500);
-          font-size: 0.8rem;
-          font-family: var(--fonts-secondary);
-        }
-        :global(.status-dot) {
-          width: 8px;
-          height: 8px;
-          background-color: #00ff00;
-          border-radius: 50%;
-          margin-right: 8px;
-          box-shadow: 0 0 5px #00ff00;
-        }
+
       `}</style>
     </div>
   );

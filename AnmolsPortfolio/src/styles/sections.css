@@ -63,15 +63,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  justify-content: center; /* Center items if they don't fill width */
-  padding: 0 1rem; /* Ensure notches don't touch edges */
+  justify-content: center;
+  padding: 0 1rem;
   width: 100%;
 }
 .project-card {
   height: 100%;
-  transition: transform 0.3s ease;
-  max-width: 600px; /* Prevent cards from getting too wide */
-  margin: 0 auto; /* Center card in its grid cell */
+  max-width: 600px;
+  margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -80,13 +79,14 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease;
 }
 .project-card .pad__body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-.project-card:hover {
+.project-card:hover .pad {
   transform: translateY(-5px);
 }
 .card-header {

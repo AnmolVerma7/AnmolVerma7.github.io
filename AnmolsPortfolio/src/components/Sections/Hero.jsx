@@ -194,72 +194,8 @@ const Hero = ({ setActiveSection }) => {
           </div>
         </div>
       </div>
-      {/*
-      <div className="hero-side">
-        <Pad>
-          <h3 className="text-heading3">Current Status</h3>
-          <div className="status-list">
-            <StatusItem label="System" value="Operational" status="active" />
-            <StatusItem
-              label="Availability"
-              value="Open to Work"
-              status="active"
-            />
-            <StatusItem
-              label="Location"
-              value="Remote / Hybrid"
-              status="normal"
-            />
-          </div>
-        </Pad>
-      </div>
-      */}
-      {/*
-      <div className="hero-side">
-        <Pad>
-          <h3 className="text-heading3">Current Status</h3>
-          <div className="status-list">
-            <StatusItem label="System" value="Operational" status="active" />
-            <StatusItem
-              label="Availability"
-              value="Open to Work"
-              status="active"
-            />
-            <StatusItem
-              label="Location"
-              value="Remote / Hybrid"
-              status="normal"
-            />
-          </div>
-        </Pad>
-      </div>
-      */}
     </div>
   );
 };
-
-/*
-const StatusItem = ({ label, value, status }) => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      marginBottom: "0.75rem",
-      paddingBottom: "0.75rem",
-      borderBottom: "1px solid #5d2322",
-    }}
-  >
-    <span style={{ color: "#2be4ea" }}>{label}:</span>
-    <span
-      style={{
-        color: status === "active" ? "#2bfea0" : "#fed33f",
-        fontWeight: "bold",
-      }}
-    >
-      {value}
-    </span>
-  </div>
-);
-*/
 
 export default Hero;

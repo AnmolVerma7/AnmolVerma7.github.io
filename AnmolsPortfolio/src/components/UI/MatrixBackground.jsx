@@ -11,7 +11,6 @@ const MatrixBackground = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    // Set canvas size
     // Track previous width to ignore vertical-only resizes (mobile address bar)
     let prevWidth = window.innerWidth;
 
@@ -22,13 +21,6 @@ const MatrixBackground = () => {
         prevWidth = window.innerWidth;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
-        // Re-initialize columns if width changes
-        const newCols = Math.floor(window.innerWidth / 20) + 1;
-        // We can't easily update the closure's ypos, so we might need to rely on the
-        // fact that the effect might not re-run.
-        // Actually, if we don't update cols/ypos, the rain pattern might look wrong on width change.
-        // For now, let's just focus on preventing the reload on scroll.
       }
     };
 
@@ -42,11 +34,9 @@ const MatrixBackground = () => {
     const cols = Math.floor(window.innerWidth / 20) + 1;
     const ypos = Array(cols).fill(0);
 
-    // Colors from CSS variables (hardcoded fallback for safety)
     const matrixColor = "#00E5FF";
     const fadeAlpha = 0.08;
 
-    // Helper to build gradient
     const buildGradient = (h) => {
       const grad = ctx.createLinearGradient(0, 0, 0, h);
       grad.addColorStop(0, "#050505"); // --colors-bg--300
