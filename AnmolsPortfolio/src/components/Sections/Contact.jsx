@@ -1,6 +1,5 @@
 import React from "react";
 import Pad from "../UI/Pad";
-import Button from "../UI/Button";
 import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 
 const ContactItem = ({ icon, label, value, link }) => (
@@ -30,47 +29,6 @@ const Contact = () => {
       </div>
 
       <div className="contact-grid">
-        <div className="contact-form-col">
-          <Pad>
-            <h3 className="text-heading3" style={{ marginBottom: "1rem" }}>
-              Send Message
-            </h3>
-
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div className="form-group">
-                <label className="form-label" htmlFor="name">
-                  Name
-                </label>
-                <div className="form-control">
-                  <input id="name" type="text" placeholder="Enter your name..." />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="email">
-                  Email
-                </label>
-                <div className="form-control">
-                  <input id="email" type="email" placeholder="your@email.com" />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="message">
-                  Message
-                </label>
-                <div className="form-control">
-                  <textarea id="message" rows="5" placeholder="Your message..."></textarea>
-                </div>
-              </div>
-
-              <Button size="xl" variant="primary" type="submit">
-                Transmit Message
-              </Button>
-            </form>
-          </Pad>
-        </div>
-
         <div className="contact-info-col">
           <Pad>
             <h3 className="text-heading3" style={{ marginBottom: "1rem" }}>

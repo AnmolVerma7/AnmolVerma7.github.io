@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
+import { Divide as Hamburger } from "hamburger-react";
 import MatrixBackground from "../UI/MatrixBackground";
 import Pad from "../UI/Pad";
 
@@ -64,8 +64,8 @@ const NavItem = ({ text, isActive, onClick, notificationCount = 0 }) => (
   </li>
 );
 
-const MobileNavItem = ({ text, isActive, onClick }) => (
-  <li style={{ marginBottom: "1rem", listStyle: "none" }}>
+const MobileNavItem = ({ text, isActive, onClick, isLast = false }) => (
+  <li style={{ marginBottom: isLast ? 0 : "1rem", listStyle: "none" }}>
     <a
       href="#"
       onClick={(e) => {
@@ -98,7 +98,7 @@ const MobileNav = ({ isOpen, setIsOpen, activeSection, setActiveSection, buttonR
     if (isOpen && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       setPosition({
-        top: rect.bottom + 5, // 5px gap below button
+        top: rect.bottom + 25, // 25px gap ensures it clears the Navbar Pad's border/notch
         right: window.innerWidth - rect.right,
       });
     }
@@ -121,53 +121,50 @@ const MobileNav = ({ isOpen, setIsOpen, activeSection, setActiveSection, buttonR
     setIsOpen(false);
   };
 
-  if (!isOpen) return null;
-
   // Render dropdown via portal to document.body (escapes Pad clipping!)
   return ReactDOM.createPortal(
     <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: 1, height: "auto" }}
-        exit={{ opacity: 0, height: 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        style={{
-          position: "fixed",
-          top: `${position.top}px`,
-          right: `${position.right}px`,
-          width: "250px",
-          background: "#050505",
-          border: "2px solid #00b8cc",
-          zIndex: 99999,
-          overflow: "hidden",
-          clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%)",
-        }}
-      >
-        <div style={{ padding: "1.5rem 1rem" }}>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-            <MobileNavItem
-              text="HOME"
-              isActive={activeSection === "home"}
-              onClick={() => handleNavClick("home")}
-            />
-            <MobileNavItem
-              text="PROJECTS"
-              isActive={activeSection === "projects"}
-              onClick={() => handleNavClick("projects")}
-            />
-            <MobileNavItem
-              text="EXPERIENCE"
-              isActive={activeSection === "experience"}
-              onClick={() => handleNavClick("experience")}
-            />
-            <MobileNavItem
-              text="CONTACT"
-              isActive={activeSection === "contact"}
-              onClick={() => handleNavClick("contact")}
-            />
-          </ul>
-        </div>
-      </motion.div>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -20, scale: 0.95 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          style={{
+            position: "fixed",
+            top: `${position.top}px`,
+            right: `${position.right}px`,
+            width: "250px",
+            zIndex: 99999,
+          }}
+        >
+          <Pad>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <MobileNavItem
+                text="HOME"
+                isActive={activeSection === "home"}
+                onClick={() => handleNavClick("home")}
+              />
+              <MobileNavItem
+                text="PROJECTS"
+                isActive={activeSection === "projects"}
+                onClick={() => handleNavClick("projects")}
+              />
+              <MobileNavItem
+                text="EXPERIENCE"
+                isActive={activeSection === "experience"}
+                onClick={() => handleNavClick("experience")}
+              />
+              <MobileNavItem
+                text="CONTACT"
+                isActive={activeSection === "contact"}
+                onClick={() => handleNavClick("contact")}
+                isLast={true}
+              />
+            </ul>
+          </Pad>
+        </motion.div>
+      )}
     </AnimatePresence>,
     document.body // Portal renders at document root!
   );
@@ -215,15 +212,15 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
             </nav>
 
             {/* Mobile Hamburger Button */}
-            <div className="mobile-hamburger">
-              <button
-                ref={hamburgerRef}
-                className="hamburger-btn"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle Menu"
-              >
-                {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-              </button>
+            <div className="mobile-hamburger" ref={hamburgerRef}>
+              <Hamburger
+                toggled={isMobileMenuOpen}
+                toggle={setIsMobileMenuOpen}
+                color="#00e5ff" // --colors-primary--500
+                size={28}
+                distance="sm"
+                rounded
+              />
             </div>
           </div>
         </Pad>
@@ -368,14 +365,6 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
           border-radius: 50%;
           margin-right: 8px;
           box-shadow: 0 0 5px #00ff00;
-        }
-        .hamburger-btn {
-          background: transparent;
-          border: 1px solid var(--colors-primary--600);
-          color: var(--colors-primary--500);
-          padding: 0.5rem;
-          cursor: pointer;
-          clip-path: var(--ui-notch-path);
         }
       `}</style>
     </div>

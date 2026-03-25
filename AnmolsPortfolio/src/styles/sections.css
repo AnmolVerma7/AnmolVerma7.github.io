@@ -73,6 +73,18 @@
   max-width: 600px; /* Prevent cards from getting too wide */
   margin: 0 auto; /* Center card in its grid cell */
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.project-card .pad {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.project-card .pad__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -109,13 +121,16 @@
   transform: scale(1.05);
 }
 .project-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 .project-desc {
   color: var(--colors-tertiary--500);
   margin-bottom: 1rem;
   line-height: 1.6;
   font-size: 0.95rem;
+}
+.tech-stack {
+  margin-top: auto;
 }
 .tech-label {
   font-size: 0.85rem;
@@ -128,14 +143,21 @@
   flex-wrap: wrap;
 }
 .card-actions {
-  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
 }
 
 /* Contact Section */
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   gap: 2rem;
+}
+.contact-info-col {
+  width: 100%;
+  max-width: 600px;
 }
 .form-group {
   margin-bottom: 1rem;

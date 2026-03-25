@@ -2,9 +2,9 @@ import React from "react";
 import Pad from "../UI/Pad";
 
 const SKILLS = {
-  languages: ["C#", "Python", "JavaScript", "SQL", "HTML/CSS"],
-  frameworks: [".NET", "React", "Unity", "Pygame"],
-  tools: ["Git", "VS Code", "Visual Studio", "Agility PIM"],
+  languages: ["JavaScript", "TypeScript", "Python", "Java", "C#", "PHP", "HTML", "CSS", "SQL"],
+  frameworks: ["React", "Next.js", "Node.js", ".NET", "Bootstrap", "Tailwind CSS"],
+  tools: ["Supabase", "PostgreSQL", "OpenAI API", "Claude API", "Git", "Vercel", "Unity", "Figma"],
 };
 
 const TechBadge = ({ children }) => (
@@ -52,7 +52,7 @@ const Skills = () => {
         <div style={{ marginTop: "1.5rem" }}>
           <SkillCategory title="Languages" items={SKILLS.languages} />
           <SkillCategory title="Frameworks" items={SKILLS.frameworks} />
-          <SkillCategory title="Tools" items={SKILLS.tools} />
+          <SkillCategory title="Tools & Platforms" items={SKILLS.tools} />
         </div>
       </div>
     </Pad>

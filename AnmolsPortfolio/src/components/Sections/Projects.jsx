@@ -6,16 +6,42 @@ import Badge from "../UI/Badge";
 
 import unityGameImg from "../../assets/Images/UnityGame.gif";
 import doubleAlgoImg from "../../assets/Images/DoubleAlgo.gif";
+import avClothingImg from "../../assets/Images/AVClothing.gif";
+import nutriAiImg from "../../assets/Images/NutriAI.jpg";
 
 const PROJECTS = [
   {
+    id: "nutri-ai",
+    name: "NutriAI",
+    description:
+      "Intelligent, AI-powered nutrition tracking app with natural language logging and personalized meal planning. Features a Multi-Agent System for analyzing health goals.",
+    tech: ["Next.js 16", "TypeScript", "Supabase", "AI Agents", "Tailwind"],
+    status: "Completed",
+    year: "2025",
+    repo: "https://github.com/AnmolVerma7/NutriAI",
+    live: "https://nutriai-av.vercel.app/",
+    image: nutriAiImg,
+  },
+  {
+    id: "av-clothing",
+    name: "AV Clothing",
+    description:
+      "Modern e-commerce clothing store with product browsing, cart functionality, and sales dashboard. Built with React 19 and Material-UI.",
+    tech: ["React 19", "TypeScript", "Material-UI", "Vite"],
+    status: "Completed",
+    year: "2025",
+    repo: "https://github.com/AnmolVerma7/AV-Clothing",
+    live: "https://av-clothing.vercel.app/",
+    image: avClothingImg,
+  },
+  {
     id: "unity-game",
-    name: "3D Game in Unity",
+    name: "Runner3D",
     description:
       '"A" and "D" a game made by me after learning C# while using the .NET framework in Unity. It features a few levels that were very fun to design.',
     tech: ["C#", ".NET", "Unity"],
-    status: "Active Dev",
-    year: "2024",
+    status: "Completed",
+    year: "2023",
     repo: "https://github.com/AnmolVerma7/3DUnityGame",
     image: unityGameImg,
   },
@@ -78,6 +104,17 @@ const ProjectCard = ({ project, index }) => {
 
         <h3 className="text-heading3 project-title">{project.name}</h3>
 
+        <div className="card-actions">
+          {project.live && (
+            <Button variant="secondary" onClick={() => window.open(project.live, "_blank")}>
+              Live Demo
+            </Button>
+          )}
+          <Button variant="primary" onClick={() => window.open(project.repo, "_blank")}>
+            View Repository
+          </Button>
+        </div>
+
         <p className="project-desc">{project.description}</p>
 
         <div className="tech-stack">
@@ -87,12 +124,6 @@ const ProjectCard = ({ project, index }) => {
               <TechBadge key={tech}>{tech}</TechBadge>
             ))}
           </div>
-        </div>
-
-        <div className="card-actions">
-          <Button variant="primary" onClick={() => window.open(project.repo, "_blank")}>
-            View Repository
-          </Button>
         </div>
       </Pad>
     </motion.div>

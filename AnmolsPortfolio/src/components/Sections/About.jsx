@@ -24,21 +24,6 @@ const About = () => {
             commitment to enhance digital safety and privacy in our interconnected world.
           </p>
         </div>
-
-        <div className="resume-action">
-          <Button
-            variant="primary"
-            onClick={() => {
-              const subject = encodeURIComponent("Resume Access Request: [Recruiter Name]");
-              const body = encodeURIComponent(
-                "Hello Anmol,\n\nI am interested in your profile and would like to request access to your full resume.\n\nBest,\n[Name]"
-              );
-              window.location.href = `mailto:anmolverma1722@gmail.com?subject=${subject}&body=${body}`;
-            }}
-          >
-            Request Resume Access Protocol
-          </Button>
-        </div>
       </div>
     </Pad>
   );
