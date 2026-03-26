@@ -126,9 +126,11 @@ const ProjectCard = ({ project, index }) => {
               Live Demo
             </Button>
           )}
-          <Button variant="primary" onClick={() => window.open(project.repo, "_blank")}>
-            View Repository
-          </Button>
+          {project.repo && (
+            <Button variant="primary" onClick={() => window.open(project.repo, "_blank")}>
+              View Repository
+            </Button>
+          )}
         </div>
 
         <p className="project-desc">{project.description}</p>
