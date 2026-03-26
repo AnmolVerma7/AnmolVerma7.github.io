@@ -49,11 +49,12 @@ const PROJECTS = [
     id: "pathfinding",
     name: "Pathfinding Visualizer",
     description:
-      "Showcases an implementation of 2 Pathfinding Algorithms using Pygame. Interactive grid for start/end points and obstacles.",
-    tech: ["Python", "Pygame"],
+      "Showcases an interactive implementation of Pathfinding Algorithms right in the browser. Features a dynamic grid for plotting start/end points and obstacles.",
+    tech: ["HTML5", "CSS3", "Vanilla JS"],
     status: "Completed",
     year: "2023",
-    repo: "https://github.com/AnmolVerma7/Pathfinding-Visualizer",
+    repo: "https://github.com/AnmolVerma7/PathfindingWeb",
+    live: "https://anmolverma7.github.io/PathfindingWeb/",
     image: doubleAlgoImg,
   },
 ];
