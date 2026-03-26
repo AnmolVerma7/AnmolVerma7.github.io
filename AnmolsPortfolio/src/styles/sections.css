@@ -116,7 +116,22 @@
     opacity 0.3s,
     transform 0.5s;
 }
-.project-card:hover .glitch-image {
+
+.project-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.8;
+  transition:
+    opacity 0.3s,
+    transform 0.5s;
+}
+
+.project-card:hover .glitch-image,
+.project-card:hover .project-video {
   opacity: 1;
   transform: scale(1.05);
 }

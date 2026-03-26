@@ -11,6 +11,17 @@ import nutriAiImg from "../../assets/Images/NutriAI.jpg";
 
 const PROJECTS = [
   {
+    id: "voidrun",
+    name: "VoidRun",
+    description:
+      "First-person movement-based survival game where players must outrun a health-draining void to reach the end. A focused fork from a larger title ('Cardini') designed specifically to refine complex movement systems and test mechanics within a high-pressure loop.",
+    tech: ["Unity", "C#", "Kinematic Character Controller", "Cinemachine"],
+    status: "Active Dev",
+    year: "2026",
+    live: "https://anmolverma7.github.io/VoidRun/",
+    video: "/Videos/VRDemo.mp4",
+  },
+  {
     id: "nutri-ai",
     name: "NutriAI",
     description:
@@ -32,19 +43,9 @@ const PROJECTS = [
     year: "2025",
     repo: "https://github.com/AnmolVerma7/AV-Clothing",
     live: "https://av-clothing.vercel.app/",
-    image: avClothingImg,
+    video: "/Videos/AvClothing.mp4",
   },
-  {
-    id: "unity-game",
-    name: "Runner3D",
-    description:
-      '"A" and "D" a game made by me after learning C# while using the .NET framework in Unity. It features a few levels that were very fun to design.',
-    tech: ["C#", ".NET", "Unity"],
-    status: "Completed",
-    year: "2023",
-    repo: "https://github.com/AnmolVerma7/3DUnityGame",
-    image: unityGameImg,
-  },
+
   {
     id: "pathfinding",
     name: "Pathfinding Visualizer",
@@ -100,7 +101,21 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         <div className="project-image-container">
-          <div className="glitch-image" style={{ backgroundImage: `url(${project.image})` }}></div>
+          {project.video ? (
+            <video
+              src={project.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="project-video"
+            />
+          ) : (
+            <div
+              className="glitch-image"
+              style={{ backgroundImage: `url(${project.image})` }}
+            ></div>
+          )}
         </div>
 
         <h3 className="text-heading3 project-title">{project.name}</h3>
