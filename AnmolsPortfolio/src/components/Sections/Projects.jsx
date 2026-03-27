@@ -5,7 +5,7 @@ import Button from "../UI/Button";
 import Badge from "../UI/Badge";
 
 import unityGameImg from "../../assets/Images/UnityGame.gif";
-import doubleAlgoImg from "../../assets/Images/DoubleAlgo.gif";
+
 import avClothingImg from "../../assets/Images/AVClothing.gif";
 import nutriAiImg from "../../assets/Images/NutriAI.jpg";
 
@@ -56,7 +56,7 @@ const PROJECTS = [
     year: "2023",
     repo: "https://github.com/AnmolVerma7/PathfindingWeb",
     live: "https://anmolverma7.github.io/PathfindingWeb/",
-    image: doubleAlgoImg,
+    video: "/Videos/PathfindingDemo.mp4",
   },
 ];
 
@@ -102,14 +102,7 @@ const ProjectCard = ({ project, index }) => {
 
         <div className="project-image-container">
           {project.video ? (
-            <video
-              src={project.video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="project-video"
-            />
+            <video src={project.video} autoPlay loop muted playsInline className="project-video" />
           ) : (
             <div
               className="glitch-image"
