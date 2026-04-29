@@ -15,7 +15,7 @@ const PROJECTS = [
     tech: ["Unity", "C#", "Kinematic Character Controller", "Cinemachine"],
     status: "Active Dev",
     year: "2026",
-    live: "https://anmolverma7.github.io/VoidRun/",
+    live: "https://anmolv.com/VoidRun/",
     video: "/Videos/VRDemo.mp4",
   },
   {
@@ -52,7 +52,7 @@ const PROJECTS = [
     status: "Completed",
     year: "2023",
     repo: "https://github.com/AnmolVerma7/PathfindingWeb",
-    live: "https://anmolverma7.github.io/PathfindingWeb/",
+    live: "https://anmolv.com/PathfindingWeb/",
     video: "/Videos/PathfindingDemo.mp4",
   },
 ];
