@@ -4,9 +4,6 @@ import Pad from "../UI/Pad";
 import Button from "../UI/Button";
 import Badge from "../UI/Badge";
 
-import unityGameImg from "../../assets/Images/UnityGame.gif";
-
-import avClothingImg from "../../assets/Images/AVClothing.gif";
 import nutriAiImg from "../../assets/Images/NutriAI.jpg";
 
 const PROJECTS = [
