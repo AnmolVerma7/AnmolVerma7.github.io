@@ -15,13 +15,14 @@ const About = () => {
 
         <div className="bio-text">
           <p>
-            Hi there, I'm Anmol! I'm currently majoring in{" "}
-            <strong>Computer Information Systems</strong> with a strong focus on deepening my
-            expertise in computing.
+            I'm Anmol, a CIS student and developer who gravitates toward the <strong>visual</strong>{" "}
+            and the <strong>interactive</strong>. Whether it's a <strong>web interface</strong>, a{" "}
+            <strong>game</strong>, or something in between, I care about how it feels as much as how
+            it works.
           </p>
           <p>
-            My goal is to pursue a career in <strong>cyber/computer security</strong>, driven by a
-            commitment to enhance digital safety and privacy in our interconnected world.
+            Currently finishing my degree at <strong>MRU</strong> while building real projects in{" "}
+            <strong>React</strong>, <strong>Unity</strong>, and whatever else the idea calls for.
           </p>
         </div>
       </div>
