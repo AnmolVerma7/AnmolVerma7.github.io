@@ -7,12 +7,13 @@
   min-height: 100vh;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 .hero-overline {
   margin-bottom: 1rem;
 }
 .hero-title {
-  font-size: clamp(4rem, 12vw, 11rem);
+  font-size: clamp(4.5rem, 15vw, 11rem);
   font-weight: 700;
   line-height: 1;
   margin: 0 0 2rem 0;
@@ -24,6 +25,12 @@
 }
 .highlight-text {
   color: var(--colors-secondary--500);
+}
+.motd-text {
+  opacity: 0.6;
+  font-size: clamp(0.75rem, 3vw, 1rem);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
 }
 .hero-cta {
   margin-top: 2rem;

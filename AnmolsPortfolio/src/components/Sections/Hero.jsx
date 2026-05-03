@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchGitHubActivity } from "../../utils/github";
 import Button from "../UI/Button";
 import Pad from "../UI/Pad";
+import quotes from "../../data/quotes.json";
 
 /**
  * Component that renders text with a "hacked" decoding animation effect.
@@ -144,6 +145,15 @@ const Hero = ({ setActiveSection }) => {
     "→ Building AI Agents",
   ]);
 
+  // Deterministically pick a quote based on the current local date
+  const getDailyQuote = () => {
+    const today = new Date();
+    // Creates a number like 20260503
+    const dateNum = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    return quotes[dateNum % quotes.length];
+  };
+  const currentMotd = getDailyQuote();
+
   useEffect(() => {
     const loadActivity = async () => {
       const githubEvents = await fetchGitHubActivity("AnmolVerma7");
@@ -161,9 +171,13 @@ const Hero = ({ setActiveSection }) => {
             <span className="segment-topbar__overline">SYSTEM_ID: ANMOL-V7 // STATUS: ONLINE</span>
           </div>
 
-          <h1 className="hero-title">
+          <h1 className="hero-title" style={{ marginBottom: "0.5rem" }}>
             <HackedText text="ANMOL" className="highlight-text" />
           </h1>
+          
+          <div className="segment-topbar__overline motd-text">
+            // MOTD: {currentMotd} //
+          </div>
 
           <div className="hero-cta">
             <Button size="xl" variant="primary" onClick={() => setActiveSection("projects")}>
