@@ -181,8 +181,9 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
       <header className="app-header">
         <Pad>
           <div className="header-content">
-            <div className="app-header__anchor">
+            <div className="app-header__anchor" style={{ display: 'flex', alignItems: 'center' }}>
               <span className="app-header__anchor__text">ANMOL://PORTFOLIO_V2.0</span>
+              <img src="/LogoV1.png" alt="Logo" className="app-header__anchor__logo" />
             </div>
 
             {/* Desktop Nav */}
@@ -266,6 +267,11 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
           text-transform: uppercase;
           color: var(--colors-secondary--500);
         }
+        .app-header__anchor__logo {
+          display: none;
+          height: 36px;
+          object-fit: contain;
+        }
         .nav {
           list-style: none;
           margin: 0;
@@ -294,6 +300,14 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
           }
           .header-content {
             flex-direction: row;
+          }
+        }
+        @media (max-width: 425px) {
+          .app-header__anchor__text {
+            display: none;
+          }
+          .app-header__anchor__logo {
+            display: block;
           }
         }
 

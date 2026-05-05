@@ -25,6 +25,17 @@ const About = () => {
             <strong>React</strong>, <strong>Unity</strong>, and whatever else the idea calls for.
           </p>
         </div>
+
+        <div className="current-stack" style={{ marginTop: "1.5rem" }}>
+          <div className="segment-topbar__overline" style={{ marginBottom: "0.8rem" }}>
+            CURRENT_STACK:
+          </div>
+          <div className="tech-badge-container">
+            {["React", "TypeScript", "PHP", "Bootstrap", "Unity", "C#", "Supabase", "AI APIs"].map((tech) => (
+              <span key={tech} className="tech-badge">{tech}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </Pad>
   );

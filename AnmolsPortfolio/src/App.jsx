@@ -4,7 +4,6 @@ import "./styles/sections.css";
 import Layout from "./components/Layout/Layout";
 import Hero from "./components/Sections/Hero";
 import Projects from "./components/Sections/Projects";
-import Skills from "./components/Sections/Skills";
 import Experience from "./components/Sections/Experience";
 import About from "./components/Sections/About";
 import Contact from "./components/Sections/Contact";
@@ -20,7 +19,6 @@ function App() {
             <Hero setActiveSection={setActiveSection} />
             <div className="about-skills-grid">
               <About />
-              <Skills />
             </div>
           </>
         );
