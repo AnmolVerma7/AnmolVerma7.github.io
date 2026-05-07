@@ -32,25 +32,28 @@ const NavItem = ({ text, isActive, onClick, notificationCount = 0 }) => (
       .nav__link {
         align-items: baseline;
         display: flex;
+        font-size: 1.1rem;
         text-shadow: var(--ui-glow-text);
         text-transform: uppercase;
         transition:
-          transform 0.25s,
-          color 0.3s ease;
+          color 0.3s ease,
+          border-color 0.3s ease;
         line-height: 1.4rem;
         cursor: pointer;
         color: var(--colors-primary--500);
         text-decoration: none;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 2px;
       }
       .nav__link:hover {
         color: #ffffff;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        border-bottom-color: rgba(255, 255, 255, 0.4);
       }
       .nav__link--active {
         color: var(--colors-secondary--500);
-        font-size: 1.25rem;
-        transform: none;
         text-shadow: var(--ui-glow-text);
+        border-bottom-color: var(--colors-secondary--500);
       }
       .badge-mini {
         border: 1px solid var(--colors-tertiary--500);
@@ -98,7 +101,7 @@ const MobileNav = ({ isOpen, setIsOpen, activeSection, setActiveSection, buttonR
     if (isOpen && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       setPosition({
-        top: rect.bottom + 25, // 25px gap ensures it clears the Navbar Pad's border/notch
+        top: rect.bottom + 16,
         right: window.innerWidth - rect.right,
       });
     }
@@ -138,7 +141,15 @@ const MobileNav = ({ isOpen, setIsOpen, activeSection, setActiveSection, buttonR
             zIndex: 99999,
           }}
         >
-          <Pad>
+          <div style={{
+            background: "rgba(0, 0, 0, 0.82)",
+            backdropFilter: "blur(16px)",
+            WebkitBackdropFilter: "blur(16px)",
+            border: "1px solid rgba(0, 229, 255, 0.18)",
+            borderRadius: "4px",
+            padding: "1.25rem 1.5rem",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 229, 255, 0.05)",
+          }}>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               <MobileNavItem
                 text="HOME"
@@ -162,7 +173,7 @@ const MobileNav = ({ isOpen, setIsOpen, activeSection, setActiveSection, buttonR
                 isLast={true}
               />
             </ul>
-          </Pad>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>,
@@ -179,52 +190,50 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
       <MatrixBackground />
 
       <header className="app-header">
-        <Pad>
-          <div className="header-content">
-            <div className="app-header__anchor" style={{ display: 'flex', alignItems: 'center' }}>
-              <span className="app-header__anchor__text">ANMOL://PORTFOLIO_V2.0</span>
-              <img src="/LogoV1.png" alt="Logo" className="app-header__anchor__logo" />
-            </div>
-
-            {/* Desktop Nav */}
-            <nav className="desktop-nav">
-              <ul className="nav">
-                <NavItem
-                  text="Home"
-                  isActive={activeSection === "home"}
-                  onClick={() => setActiveSection("home")}
-                />
-                <NavItem
-                  text="Projects"
-                  isActive={activeSection === "projects"}
-                  onClick={() => setActiveSection("projects")}
-                />
-                <NavItem
-                  text="Experience"
-                  isActive={activeSection === "experience"}
-                  onClick={() => setActiveSection("experience")}
-                />
-                <NavItem
-                  text="Contact"
-                  isActive={activeSection === "contact"}
-                  onClick={() => setActiveSection("contact")}
-                />
-              </ul>
-            </nav>
-
-            {/* Mobile Hamburger Button */}
-            <div className="mobile-hamburger" ref={hamburgerRef}>
-              <Hamburger
-                toggled={isMobileMenuOpen}
-                toggle={setIsMobileMenuOpen}
-                color="#00e5ff"
-                size={28}
-                distance="sm"
-                rounded
-              />
-            </div>
+        <div className="header-content">
+          <div className="app-header__anchor" style={{ display: "flex", alignItems: "center" }}>
+            <span className="app-header__anchor__text">ANMOL://PORTFOLIO_V2.0</span>
+            <img src="/LogoV1.png" alt="Logo" className="app-header__anchor__logo" />
           </div>
-        </Pad>
+
+          {/* Desktop Nav */}
+          <nav className="desktop-nav">
+            <ul className="nav">
+              <NavItem
+                text="Home"
+                isActive={activeSection === "home"}
+                onClick={() => setActiveSection("home")}
+              />
+              <NavItem
+                text="Projects"
+                isActive={activeSection === "projects"}
+                onClick={() => setActiveSection("projects")}
+              />
+              <NavItem
+                text="Experience"
+                isActive={activeSection === "experience"}
+                onClick={() => setActiveSection("experience")}
+              />
+              <NavItem
+                text="Contact"
+                isActive={activeSection === "contact"}
+                onClick={() => setActiveSection("contact")}
+              />
+            </ul>
+          </nav>
+
+          {/* Mobile Hamburger Button */}
+          <div className="mobile-hamburger" ref={hamburgerRef}>
+            <Hamburger
+              toggled={isMobileMenuOpen}
+              toggle={setIsMobileMenuOpen}
+              color="#00e5ff"
+              size={28}
+              distance="sm"
+              rounded
+            />
+          </div>
+        </div>
       </header>
 
       <main>{children}</main>
@@ -246,9 +255,18 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
           margin: 0 auto;
         }
         .app-header {
-          margin: 1rem 0 2rem 0;
-          position: relative;
-          z-index: 1;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          padding: 1.15rem 0;
+          margin: 0 -2rem 2rem -2rem;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          background: rgba(0, 0, 0, 0.55);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+          box-shadow: 0 1px 30px rgba(0, 229, 255, 0.05);
         }
         main {
           position: relative;
@@ -310,8 +328,6 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
             display: block;
           }
         }
-
-
       `}</style>
     </div>
   );

@@ -379,8 +379,3 @@
   border-color: var(--colors-secondary--500);
   background-color: rgba(255, 0, 60, 0.1);
 }
-@media (max-width: 768px) {
-  .about-skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
