@@ -29,6 +29,7 @@
 .text-heading3 {
   font-size: 1.5rem;
   color: var(--colors-secondary--500);
+  margin-top: 0;
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;

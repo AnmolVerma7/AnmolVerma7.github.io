@@ -34,15 +34,15 @@ const CyberToast = ({ message, type = "success", duration = 5000, onClose }) => 
     switch (type) {
       case "success":
         return {
-          color: "#00E5FF",
-          border: "2px solid #00E5FF",
+          color: "var(--colors-primary--500)",
+          border: "2px solid var(--colors-primary--500)",
           boxShadow: "0 0 10px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.2)",
           title: "TRANSMISSION_SUCCESS",
         };
       case "error":
         return {
-          color: "#FF003C",
-          border: "2px solid #FF003C",
+          color: "var(--colors-secondary--500)",
+          border: "2px solid var(--colors-secondary--500)",
           boxShadow: "0 0 10px rgba(255, 0, 60, 0.5), inset 0 0 10px rgba(255, 0, 60, 0.2)",
           title: "TRANSMISSION_FAILED",
         };
@@ -55,8 +55,8 @@ const CyberToast = ({ message, type = "success", duration = 5000, onClose }) => 
         };
       default:
         return {
-          color: "#00E5FF",
-          border: "2px solid #00E5FF",
+          color: "var(--colors-primary--500)",
+          border: "2px solid var(--colors-primary--500)",
           boxShadow: "0 0 10px rgba(0, 229, 255, 0.5)",
           title: "SYSTEM_NOTIFICATION",
         };
@@ -78,7 +78,7 @@ const CyberToast = ({ message, type = "success", duration = 5000, onClose }) => 
             bottom: "2rem",
             right: "2rem",
             zIndex: 999999,
-            background: "#050505", // --colors-bg--300
+            background: "var(--colors-bg--300)",
             padding: "1rem 1.5rem",
             minWidth: "300px",
             maxWidth: "90vw",

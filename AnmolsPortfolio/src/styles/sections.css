@@ -45,7 +45,6 @@
   margin: 0 auto;
   text-align: left;
 }
-.status-list,
 .activity-list {
   margin-top: 0.5rem;
 }
@@ -59,9 +58,6 @@
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
-  }
-  .hero-side {
-    display: none;
   }
 }
 
@@ -181,57 +177,7 @@
   width: 100%;
   max-width: 600px;
 }
-.form-group {
-  margin-bottom: 1rem;
-}
-.form-label {
-  background-color: var(--colors-primary--600);
-  color: black;
-  font-family: var(--fonts-secondary);
-  font-size: 0.92rem;
-  display: inline-block;
-  padding: 0.125em 0.75em;
-  padding-right: 2em;
-  letter-spacing: 0.065em;
-  line-height: 1;
-  text-transform: uppercase;
-  vertical-align: bottom;
-  clip-path: polygon(0.25em 0, calc(100% - 1em) 0, 100% 100%, 0.33em 100%, 0 100%, 0 0.25em);
-}
-.form-control {
-  background-color: var(--colors-bg--300);
-  border: 1px solid var(--colors-primary--600);
-  clip-path: var(--ui-notch-path);
-  padding-right: 0.5rem;
-  position: relative;
-}
-.form-control::before {
-  background-color: var(--colors-primary--600);
-  bottom: 5px;
-  content: "";
-  display: block;
-  height: 3px;
-  position: absolute;
-  right: -6px;
-  top: auto;
-  transform: rotate(-45deg);
-  width: var(--ui-notch-hypotenuse);
-  z-index: 100;
-}
-.form-control input,
-.form-control textarea {
-  background-color: transparent;
-  border: 0;
-  box-shadow: none;
-  color: var(--colors-primary--500);
-  font-family: var(--fonts-primary);
-  font-size: 1rem;
-  letter-spacing: 0.045em;
-  outline: none;
-  padding: 0.5rem;
-  resize: none;
-  width: 100%;
-}
+
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
@@ -331,21 +277,7 @@
 .bio-text strong {
   color: var(--colors-secondary--500);
 }
-.resume-action {
-  margin-top: 1.5rem;
-}
 
-/* Skills Section */
-.skills-content {
-  height: 100%;
-}
-.skill-category {
-  margin-bottom: 1.5rem;
-}
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 /* App Layout */
 .about-skills-grid {

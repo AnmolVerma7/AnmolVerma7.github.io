@@ -78,11 +78,13 @@ const MobileNavItem = ({ text, isActive, onClick, isLast = false }) => (
       style={{
         display: "block",
         fontSize: isActive ? "1.25rem" : "1.1rem",
-        color: isActive ? "#ff003c" : "#00e5ff",
+        color: isActive ? "var(--colors-secondary--500)" : "var(--colors-primary--500)",
         textTransform: "uppercase",
-        fontFamily: "VT323, monospace",
+        fontFamily: "var(--fonts-secondary), monospace",
         letterSpacing: "0.1em",
-        textShadow: isActive ? "0 0 10px #ff003c" : "0 0 10px #00e5ff",
+        textShadow: isActive
+          ? "0 0 10px var(--colors-secondary--500)"
+          : "0 0 10px var(--colors-primary--500)",
         transition: "all 0.3s",
         cursor: "pointer",
         textDecoration: "none",

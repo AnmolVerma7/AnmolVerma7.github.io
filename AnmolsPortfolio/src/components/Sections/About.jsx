@@ -1,6 +1,5 @@
 import React from "react";
 import Pad from "../UI/Pad";
-import Button from "../UI/Button";
 
 /**
  * About section component.

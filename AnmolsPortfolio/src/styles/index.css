@@ -32,14 +32,6 @@ body {
   background: #00b8cc;
   border-radius: 3px;
 }
-/* Hover over the scrollbar track area */
-::-webkit-scrollbar:hover ::-webkit-scrollbar-thumb {
-  background: #ff003c;
-}
-/* While actively dragging */
-::-webkit-scrollbar-thumb:active {
-  background: #ff003c;
-}
 
 a {
   color: inherit;
