@@ -141,15 +141,17 @@ const MobileNav = ({ isOpen, setIsOpen, activeSection, setActiveSection, buttonR
             zIndex: 99999,
           }}
         >
-          <div style={{
-            background: "rgba(0, 0, 0, 0.82)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            border: "1px solid rgba(0, 229, 255, 0.18)",
-            borderRadius: "4px",
-            padding: "1.25rem 1.5rem",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 229, 255, 0.05)",
-          }}>
+          <div
+            style={{
+              background: "rgba(0, 0, 0, 0.82)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              border: "1px solid rgba(0, 229, 255, 0.18)",
+              borderRadius: "4px",
+              padding: "1.25rem 1.5rem",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 229, 255, 0.05)",
+            }}
+          >
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               <MobileNavItem
                 text="HOME"
@@ -229,7 +231,7 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
               toggle={setIsMobileMenuOpen}
               color="#00e5ff"
               size={28}
-              distance="sm"
+              distance="md"
               rounded
             />
           </div>
