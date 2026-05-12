@@ -5,6 +5,7 @@ import Button from "../UI/Button";
 import Badge from "../UI/Badge";
 
 import nutriAiImg from "../../assets/Images/NutriAI.jpg";
+import webShellImg from "../../assets/Images/WebShellTemp.png";
 
 const PROJECTS = [
   {
@@ -17,6 +18,18 @@ const PROJECTS = [
     year: "2026",
     live: "https://anmolv.com/VoidRun/",
     video: "/Videos/VRDemo.mp4",
+  },
+  {
+    id: "webshell",
+    name: "WebShell",
+    description:
+      "In-browser terminal simulator featuring a virtual file system, command piping, boot cinematics, a nano-style text editor, and theme support—all running entirely on the client without a backend.",
+    tech: ["React", "Vite", "Terminal UI"],
+    status: "Active Dev",
+    year: "2026",
+    repo: "https://github.com/AnmolVerma7/WebShell",
+    live: "https://anmolv.com/WebShell/",
+    image: webShellImg,
   },
   {
     id: "nutri-ai",
