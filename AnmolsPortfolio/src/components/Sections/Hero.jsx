@@ -174,10 +174,8 @@ const Hero = ({ setActiveSection }) => {
           <h1 className="hero-title" style={{ marginBottom: "0.5rem" }}>
             <HackedText text="ANMOL" className="highlight-text" />
           </h1>
-          
-          <div className="segment-topbar__overline motd-text">
-            // MOTD: {currentMotd} //
-          </div>
+
+          <div className="segment-topbar__overline motd-text">// MOTD: {currentMotd} //</div>
 
           <div className="hero-cta">
             <Button size="xl" variant="primary" onClick={() => setActiveSection("projects")}>

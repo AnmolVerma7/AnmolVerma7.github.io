@@ -82,7 +82,8 @@ const CyberToast = ({ message, type = "success", duration = 5000, onClose }) => 
             padding: "1rem 1.5rem",
             minWidth: "300px",
             maxWidth: "90vw",
-            clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
+            clipPath:
+              "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
             borderLeft: styles.border,
             borderBottom: styles.border,
           }}
@@ -150,7 +151,7 @@ const CyberToast = ({ message, type = "success", duration = 5000, onClose }) => 
               {message}
             </p>
           </div>
-          
+
           <button
             onClick={() => setIsVisible(false)}
             style={{

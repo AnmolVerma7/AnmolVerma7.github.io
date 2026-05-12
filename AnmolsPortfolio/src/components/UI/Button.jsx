@@ -48,8 +48,6 @@ const Button = ({
           transition: all 0.2s ease;
         }
 
-
-
         .button:hover {
           background-color: var(--colors-primary--800);
           color: var(--colors-on_primary--500);

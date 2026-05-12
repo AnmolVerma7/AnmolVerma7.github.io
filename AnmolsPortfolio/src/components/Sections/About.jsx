@@ -30,9 +30,13 @@ const About = () => {
             CURRENT_STACK:
           </div>
           <div className="tech-badge-container">
-            {["React", "TypeScript", "PHP", "Bootstrap", "Unity", "C#", "Supabase", "AI APIs"].map((tech) => (
-              <span key={tech} className="tech-badge">{tech}</span>
-            ))}
+            {["React", "TypeScript", "PHP", "Bootstrap", "Unity", "C#", "Supabase", "AI APIs"].map(
+              (tech) => (
+                <span key={tech} className="tech-badge">
+                  {tech}
+                </span>
+              )
+            )}
           </div>
         </div>
       </div>
