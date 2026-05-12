@@ -5,52 +5,50 @@ A futuristic, interactive portfolio website built with React and Vite, featuring
 ## 🚀 Tech Stack
 
 - **Core**: [React](https://react.dev/) (v19), [Vite](https://vitejs.dev/)
-- **Styling**: CSS Modules, CSS Variables (Theming)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) (Portal-based mobile navigation)
-- **Linting & Formatting**: ESLint, Prettier
-- **Icons**: React Icons
+- **Styling**: Vanilla CSS with CSS Custom Properties (no preprocessors, no CSS Modules)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Mobile Nav**: [hamburger-react](https://github.com/luukdv/hamburger-react) (animated hamburger icon)
+- **Linting**: ESLint
 
 ## ✨ Features
 
-- **Matrix Theme**: Custom "Matrix Cyan" and "Cyberpunk Red" color palette with neon glow effects
-- **Matrix Background**: Custom implementation of the classic digital rain effect using HTML5 Canvas
-- **Glitch Effects**: "Hacked" text animations with ping-pong reveal effects
-- **Mobile Navigation**: Professional React Portal dropdown with scroll-to-close behavior
-- **Dynamic GitHub Activity**: Fetches and displays the latest public activity from GitHub API
-- **Responsive Design**: Fully responsive layout with mobile-first approach
-- **Notched UI Elements**: Signature cyberpunk notched corners on buttons and containers
-- **Centralized Theming**: CSS variables for easy customization
+- **Matrix Rain**: Custom HTML5 Canvas implementation of the classic digital rain effect
+- **Glitch Effects**: "Hacked" text animations with randomized character ping-pong reveal
+- **Notched UI**: Signature cyberpunk clipped corners on cards, buttons, and containers via `clip-path`
+- **Pad Component**: Reusable notched container with neon border and diagonal corner accent
+- **Mobile Navigation**: React Portal-based dropdown with animated `hamburger-react` toggle
+- **Dynamic GitHub Activity**: Fetches and displays latest public events from the GitHub API
+- **Daily Quote Rotator**: Random quote from a curated JSON pool, seeded by calendar day
+- **Cyber Toast Notifications**: Custom in-app toast system used for contact form feedback
+- **Responsive Design**: Mobile-first, fully responsive layout
+- **Centralized Theming**: All colors, glows, fonts, and spacing defined as CSS variables — theme-engine ready
 
 ## 🛠️ Setup & Installation
 
-1.  **Clone the repository**
+1. **Clone the repository**
 
     ```bash
     git clone https://github.com/AnmolVerma7/AnmolVerma7.github.io.git
     cd AnmolVerma7.github.io/AnmolsPortfolio
     ```
 
-2.  **Install dependencies**
+2. **Install dependencies**
 
     ```bash
     npm install
     ```
 
-3.  **Run the development server**
+3. **Run the development server**
 
     ```bash
     npm run dev
     ```
 
-4.  **Build for production**
+4. **Build for production**
+
     ```bash
     npm run build
     ```
-
-## 🧹 Code Quality
-
-- **Linting**: Run `npm run lint` to check for code quality issues
-- **Formatting**: Run `npm run format` to auto-format code with Prettier
 
 ## 📂 Project Structure
 
@@ -58,26 +56,54 @@ A futuristic, interactive portfolio website built with React and Vite, featuring
 AnmolsPortfolio/
 ├── src/
 │   ├── components/
-│   │   ├── Layout/       # Layout wrappers & navigation
-│   │   ├── Sections/     # Page sections (Hero, Projects, etc.)
-│   │   └── UI/           # Reusable UI components (Button, Pad, MatrixBackground)
+│   │   ├── Layout/
+│   │   │   └── Layout.jsx        # Sticky navbar, mobile nav portal, page wrapper
+│   │   ├── Sections/
+│   │   │   ├── Hero.jsx          # Landing section w/ GitHub activity & quote rotator
+│   │   │   ├── Projects.jsx      # Featured projects grid w/ video/image cards
+│   │   │   ├── Experience.jsx    # Work & education timeline
+│   │   │   ├── About.jsx         # Bio & tech stack overview
+│   │   │   ├── Contact.jsx       # Contact links & form
+│   │   │   └── Skills_Archive.jsx # (Archive — not currently active)
+│   │   └── UI/
+│   │       ├── Pad.jsx           # Core notched card container
+│   │       ├── Button.jsx        # Cyberpunk-styled button (primary/secondary variants)
+│   │       ├── Badge.jsx         # Status badge (Active Dev / Completed)
+│   │       ├── CyberToast.jsx    # Custom toast notification system
+│   │       └── MatrixBackground.jsx # Canvas-based digital rain renderer
+│   ├── data/
+│   │   └── quotes.json           # Curated pool of daily rotating quotes
 │   ├── styles/
-│   │   ├── index.css     # Global resets
-│   │   ├── sections.css  # Section-specific styles
-│   │   ├── theme.css     # Shared theme utilities
-│   │   └── variables.css # CSS Variables (Colors, Fonts, Effects)
-│   ├── utils/            # Helper functions (GitHub API)
-│   └── App.jsx           # Main application entry
+│   │   ├── index.css             # Global resets, scrollbar, utility classes (.pad, .text-heading*)
+│   │   ├── sections.css          # Section-specific layout and component styles
+│   │   ├── theme.css             # Shared semantic classes (.section-container, .text-heading3, etc.)
+│   │   └── variables.css         # All CSS Custom Properties (colors, fonts, glows, spacing)
+│   ├── utils/
+│   │   └── github.js             # GitHub public events API fetch helper
+│   ├── App.jsx                   # Route/section switching logic
+│   └── main.jsx                  # App entry point
 └── .github/
     └── workflows/
-        └── deploy.yml    # GitHub Pages deployment
+        └── deploy.yml            # GitHub Pages deployment via Actions
 ```
 
 ## 🎨 Design System
 
-- **Colors**: Matrix Cyan (`#00E5FF`), Cyberpunk Red (`#FF003C`), Deep Blacks
-- **Typography**: Rajdhani (Primary), VT323 (Secondary/Monospace)
-- **Effects**: Neon glows, text shadows, notched corners, glitch animations
+All design tokens live in `variables.css` and are consumed globally via CSS custom properties — no hardcoded values in components.
+
+| Token Category | Examples |
+|---|---|
+| **Colors** | `--colors-primary--600` (Cyan), `--colors-secondary--500` (Red) |
+| **Background** | `--colors-bg--300` (Deep black) |
+| **Glows** | `--ui-glow-text`, `--ui-glow-border` |
+| **Typography** | `--fonts-primary` (Rajdhani), `--fonts-secondary` (VT323) |
+| **Notch** | `--ui-notch-path`, `--ui-notch-amount`, `--ui-notch-hypotenuse` |
+
+## 🔧 Adding Content
+
+- **Projects**: Edit the `PROJECTS` array in `src/components/Sections/Projects.jsx`
+- **Quotes**: Add strings to `src/data/quotes.json`
+- **Experience**: Edit the timeline data in `src/components/Sections/Experience.jsx`
 
 ## 📄 License
 
