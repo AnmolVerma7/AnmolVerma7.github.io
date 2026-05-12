@@ -9,17 +9,6 @@ import webShellImg from "../../assets/Images/WebShellTemp.png";
 
 const PROJECTS = [
   {
-    id: "voidrun",
-    name: "VoidRun",
-    description:
-      "First-person movement-based survival game where players must outrun a health-draining void to reach the end. A focused fork from a larger title ('Cardini') designed specifically to refine complex movement systems and test mechanics within a high-pressure loop.",
-    tech: ["Unity", "C#", "Kinematic Character Controller", "Cinemachine"],
-    status: "Active Dev",
-    year: "2026",
-    live: "https://anmolv.com/VoidRun/",
-    video: "/Videos/VRDemo.mp4",
-  },
-  {
     id: "webshell",
     name: "WebShell",
     description:
@@ -30,6 +19,17 @@ const PROJECTS = [
     repo: "https://github.com/AnmolVerma7/WebShell",
     live: "https://anmolv.com/WebShell/",
     image: webShellImg,
+  },
+  {
+    id: "voidrun",
+    name: "VoidRun",
+    description:
+      "First-person movement-based survival game where players must outrun a health-draining void to reach the end. A focused fork from a larger title ('Cardini') designed specifically to refine complex movement systems and test mechanics within a high-pressure loop.",
+    tech: ["Unity", "C#", "Kinematic Character Controller", "Cinemachine"],
+    status: "Completed",
+    year: "2026",
+    live: "https://anmolv.com/VoidRun/",
+    video: "/Videos/VRDemo.mp4",
   },
   {
     id: "nutri-ai",
